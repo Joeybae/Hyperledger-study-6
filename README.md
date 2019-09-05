@@ -18,31 +18,31 @@
   
   2) express 설치
   
-    a. npm install express --save
+    npm install express --save
     
-    b. express command 에러 시 npm install -g express-generator
+    express command 에러 시 npm install -g express-generator
     
-    c. express --view=ejs myapp
+    express --view=ejs myapp
     
-    d. cd myadd
+    cd myadd
     
-    e. npm install
+    npm install
     
-    f. localhost:3000 으로 접속
+    localhost:3000 으로 접속
    
   3) app.js 수정
   
-    a. var get_page = require('./routes/get_page'); //추가
+    var get_page = require('./routes/get_page'); //추가
     
-    b. var post_page = require('./routes/post_page'); //추가
+    var post_page = require('./routes/post_page'); //추가
     
-    c. app.use('/get_page',get_page); //추가
+    app.use('/get_page',get_page); //추가
     
-    d. app.use('/post_page',post_page); //추가
+    app.use('/post_page',post_page); //추가
     
   4) 라우터 만들기
     
-   a. views/get_page.ejs
+   a. routes/get_page.js
     
         var express = require('express'); 
         var router = express.Router();
@@ -53,7 +53,7 @@
 
         module.exports = router;
       
-   b. views/post_page.ejs
+   b. routes/post_page.js
     
         var express = require('express'); 
         var router = express.Router();
@@ -63,3 +63,42 @@
         });
 
         module.exports = router;
+        
+  5) 뷰 만들기
+    
+   a. views/get_page.ejs
+   
+    <!DOCTYPE html> 
+    <html>
+        <head>
+            <title><%= title %></title>
+            <link rel='stylesheet' href='/stylesheets/style.css' />
+        </head>
+        <body>
+            <div>GET test</div>
+            <form action="/result_page" method="get">
+                <input type="text" name="id" placeholder="Enter id here">
+                <input type="text" name="age" placeholder="Enter age here">
+                <input type="submit" value="Submit">
+            </form>
+        </body>
+    </html>
+    
+   b. views/post_page.ejs
+   
+     <!DOCTYPE html> 
+      <html>
+          <head>
+              <title><%= title %></title>
+              <link rel='stylesheet' href='/stylesheets/style.css' />
+          </head>
+          <body>
+              <div>POST test</div>
+              <form action="/result_page" method="post">
+                  <input type="text" name="id" placeholder="Enter id here">
+                  <input type="text" name="age" placeholder="Enter age here">
+                  <input type="submit" value="Submit">
+              </form>
+          </body>
+      </html>
+
