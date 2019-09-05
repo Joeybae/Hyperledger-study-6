@@ -4,7 +4,7 @@
 
 목표
 
-  1) '<form>' 에 텍스트를 받는 '<input>'
+  1) "<form>" 에 텍스트를 받는 '<input>'
   
   2) '<form>' 을 전송하는 submit 버튼
   
