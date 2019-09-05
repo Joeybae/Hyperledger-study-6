@@ -29,7 +29,26 @@
     e. npm install
     
     f. localhost:3000 으로 접속
-    
    
+  3) app.js 수정
+  
+    a. var get_page = require('./routes/get_page'); //추가
+    
+    b. var post_page = require('./routes/post_page'); //추가
+    
+    c. app.use('/get_page',get_page); //추가
+    
+    d. app.use('/post_page',post_page); //추가
+    
+  4) 라우터 만들기
+    
+    a. views/get_page.ejs
+    
+      var express = require('express'); 
+      var router = express.Router();
 
-출처: https://korbillgates.tistory.com/183 [생물정보학자의 블로그]
+      router.get('/', function(req, res, next) {
+          res.render('get_page', { title: 'Express' });
+      });
+
+      module.exports = router;
