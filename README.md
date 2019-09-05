@@ -117,7 +117,7 @@
         app.use('/result_page', result_page);  // 추가된 코드
         app.use('/users', users);
         
-7) 라우트 만들기 - result
+7) 라우트와 뷰 만들기 - result
 
   a. routes/result_page.js
   
@@ -141,4 +141,19 @@
         res.render('result_page', { title: 'Express', id: id, age: age, method: "post" });
     });
 
-  module.exports = router;
+    module.exports = router;
+    
+ b. view/result_page.ejs
+ 
+     <!DOCTYPE html> 
+      <html>
+          <head>
+              <title><%= title %></title>
+              <link rel='stylesheet' href='/stylesheets/style.css' />
+          </head>
+          <body>
+              <h2><%= method %> result page</h2>
+              <p>id: <%= id %></p>
+              <p>age: <%= age %></p>
+          </body>
+      </html>
