@@ -42,13 +42,24 @@
     
   4) 라우터 만들기
     
-    a. views/get_page.ejs
+   a. views/get_page.ejs
     
-      var express = require('express'); 
-      var router = express.Router();
+        var express = require('express'); 
+        var router = express.Router();
 
-      router.get('/', function(req, res, next) {
-          res.render('get_page', { title: 'Express' });
-      });
+        router.get('/', function(req, res, next) {
+            res.render('get_page', { title: 'Express' });
+        });
 
-      module.exports = router;
+        module.exports = router;
+      
+   b. views/post_page.ejs
+    
+        var express = require('express'); 
+        var router = express.Router();
+
+        router.get('/', function(req, res, next) {
+            res.render('post_page', { title: 'Express' });
+        });
+
+        module.exports = router;
