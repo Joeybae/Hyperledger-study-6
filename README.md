@@ -102,3 +102,43 @@
           </body>
       </html>
 
+6) app.js 수정 - result 추가
+
+        var index = require('./routes/index');
+        var get_page = require('./routes/get_page');
+        var post_page = require('./routes/post_page');
+        var result_page = require('./routes/result_page');  // 추가된 코드
+        var users = require('./routes/users');
+        ... 중략 ...
+
+        app.use('/', index);
+        app.use('/get_page', get_page);
+        app.use('/post_page', post_page);
+        app.use('/result_page', result_page);  // 추가된 코드
+        app.use('/users', users);
+        
+7) 라우트 만들기 - result
+
+  a. routes/result_page.js
+  
+    var express = require('express');
+    var router = express.Router();
+    var bodyParser = require('body-parser');
+
+    /* GET */
+    router.get('/', function(req, res, next) {
+        var id = req.query.id;
+        var age = req.query.age;
+        console.log("## get request");
+        res.render('result_page', { title: 'Express', id: id, age: age, method: "get" });
+    });
+
+    /* POST */
+    router.post('/', function(req, res, next) {
+        var id = req.body.id;
+        var age = req.body.age;
+        console.log("## post request"); 
+        res.render('result_page', { title: 'Express', id: id, age: age, method: "post" });
+    });
+
+  module.exports = router;
