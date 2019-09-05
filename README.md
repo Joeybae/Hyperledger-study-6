@@ -12,5 +12,24 @@
 
 세 가지 사항을 GET 과 POST 로 구현한다.
 
+실습
+
+  1) package.json 만들기 - npm init
+  
+  2) express 설치
+  
+    a. npm install express --save
+    
+    b. express command 에러 시 npm install -g express-generator
+    
+    c. express --view=ejs myapp
+    
+    d. cd myadd
+    
+    e. npm install
+    
+    f. localhost:3000 으로 접속
+    
+   
 
 출처: https://korbillgates.tistory.com/183 [생물정보학자의 블로그]
