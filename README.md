@@ -157,3 +157,11 @@
               <p>age: <%= age %></p>
           </body>
       </html>
+
+실행
+
+1) DEBUG=myapp:* npm start
+
+2) localhost:3000/get_page 접속
+
+3) 내용을 채우고 summit을 누르면 result_page로 이동되고 적은 값이 나옴
