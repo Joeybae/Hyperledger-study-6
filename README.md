@@ -4,9 +4,9 @@
 
 목표
 
-  1) "<form>" 에 텍스트를 받는 '<input>'
+  1) form 에 텍스트를 받는 input
   
-  2) '<form>' 을 전송하는 submit 버튼
+  2) form 을 전송하는 submit 버튼
   
   3) submit 으로 전송된 데이터를 표현하는 페이지
 
